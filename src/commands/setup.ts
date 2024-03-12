@@ -1,6 +1,6 @@
 import {Args, Command, Flags} from '@oclif/core'
 
-export default class Help extends Command {
+export default class Setup extends Command {
   static description = 'describe the command here'
 
   static examples = [
@@ -19,10 +19,10 @@ export default class Help extends Command {
   }
 
   public async run(): Promise<void> {
-    const {args, flags} = await this.parse(Help)
+    const {args, flags} = await this.parse(Setup)
 
     const name = flags.name ?? 'world'
-    this.log(`displaying all available commands:`)
+    this.log(`initializing AWS infrastructure`)
     if (args.file && flags.force) {
       this.log(`you input --force and --file: ${args.file}`)
     }
