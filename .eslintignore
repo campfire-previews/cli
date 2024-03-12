@@ -1,1 +1,4 @@
-/dist
+./github-app-installer
+./dist
+./src
+.

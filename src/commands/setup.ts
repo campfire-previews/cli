@@ -1,4 +1,7 @@
-import {Args, Command, Flags} from '@oclif/core'
+/* eslint-disable */
+
+import {Command} from '@oclif/core'
+import main from "../github-app-installer/installer.js";
 
 export default class Setup extends Command {
   static description = 'describe the command here'
@@ -7,24 +10,18 @@ export default class Setup extends Command {
     '<%= config.bin %> <%= command.id %>',
   ]
 
-  static flags = {
-    // flag with a value (-n, --name=VALUE)
-    name: Flags.string({char: 'n', description: 'name to print'}),
-    // flag with no value (-f, --force)
-    force: Flags.boolean({char: 'f'}),
-  }
+  // static args = {
+  //   file: Args.string({description: 'file to read'}),
+  // }
 
-  static args = {
-    file: Args.string({description: 'file to read'}),
-  }
+  // static flags = {
+	// 	force: Flags.boolean({char: 'f'}),
+  //   // flag with a value (-n, --name=VALUE)
+  //   name: Flags.string({char: 'n', description: 'name to print'}),
+  //   // flag with no value (-f, --force)
+  // }
 
   public async run(): Promise<void> {
-    const {args, flags} = await this.parse(Setup)
-
-    const name = flags.name ?? 'world'
-    this.log(`initializing AWS infrastructure`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
+    await main();
   }
 }
