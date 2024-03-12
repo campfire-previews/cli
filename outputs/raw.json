@@ -1,0 +1,46 @@
+{
+  "id": 854823,
+  "slug": "testappwhhaaaaa",
+  "node_id": "A_kwDOBhWHhM4ADQsn",
+  "owner": {
+    "login": "6207ALS",
+    "id": 102074244,
+    "node_id": "U_kgDOBhWHhA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/102074244?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/6207ALS",
+    "html_url": "https://github.com/6207ALS",
+    "followers_url": "https://api.github.com/users/6207ALS/followers",
+    "following_url": "https://api.github.com/users/6207ALS/following{/other_user}",
+    "gists_url": "https://api.github.com/users/6207ALS/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/6207ALS/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/6207ALS/subscriptions",
+    "organizations_url": "https://api.github.com/users/6207ALS/orgs",
+    "repos_url": "https://api.github.com/users/6207ALS/repos",
+    "events_url": "https://api.github.com/users/6207ALS/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/6207ALS/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "name": "testappWHHAAAAA",
+  "description": null,
+  "external_url": "https://www.example.com",
+  "html_url": "https://github.com/apps/testappwhhaaaaa",
+  "created_at": "2024-03-12T21:45:02Z",
+  "updated_at": "2024-03-12T21:45:02Z",
+  "client_id": "Iv1.47a183fe040dd7ef",
+  "webhook_secret": "f09dfe2f4df241b03076cd4ddc868c2d7e1e1e4b",
+  "pem": "-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBAAKCAQEA3xCn8PpNh/jfQHeDyqYTbu1+9jlcsvnuccqG0wDhMwOJwxhB\nrzK5dN+PB4rqPdgPNgAg7GYq2l8f557n2Morqf+CDarRHpF+hV4gk7RL2N2YphCf\niAoa4myQTViZCtX8aLt2df0QLSVBApBxYdy5Wa6WlhelySclvd9shMapTmlmrlYk\nYwyL1wnrdygHf5HY3zapDRkVI//Qig36ZrJ2Ce/3/pnA4prVb+uR+ozc7zUkppmx\nXZVLZBqr8QlXXDyD+yBHBBc6Sg4x+tl/k+BxqgW5IQecsIpkdlk6zo3F6SXbVCir\nj/t7SSYE1RwfvHgDxlTjVayHWrhHnWMAzQjlsQIDAQABAoIBAHGgomv2lRf2hoLo\nXpIUF0IiaNI0Viw1dGkyqYtCn3TFEJ/48zyzshT+7HUDJl9qeBUh66OAR8QFQNNT\n9vZPxf5K0Yz0vqG7q590W1PiO+C0wNWXEizSOO+uLbO4tfz3FCSlmapwxpS4rW0I\n9zjKnwA4Fy1Nzn2xG2ClNzpLmGMACnkj1kTSEbYuoxts5dXVeD7I+1awemXkwDv1\nzg0f9txqp+hOLJmEq/5WfwN1dfr1FxCcZ03fnPJd3K4DD93U/mjSOP/1BNMi5Gdh\nxm32vyAdFm4QNix/MTZ7TlWj/7v2XWYOrId8MaS1QaLRWDASR/p+w8G7isjo2c5l\n4OHwyKECgYEA8sZtq0KoeWt21Agidm1NJBRMzwLVNJ6Uclv3uAbRWBOmTD0sktZ9\ndQSzytO12k0z59PcQunVrnM4Xbppi5cONS7MXM3Vm7al+tyZDP8WRcQ3lILVfXpe\nIqgGx3XFENwXiYzXUNLvwU2BoMCrbzkandcGDf6wPnA4k49UwqXYpg8CgYEA6zdd\nd0f0+/ciwXiXgD3MmqBUVVl+8hQuCRYtP7bSq4RLO5dLxQYnhJcfgUNFPUbxVVF0\nrMNS0tl9RlTPDJtd0arjkzSdeu6hwxgR10DT4vcSnf+/Xvnjo9sb4FpMvt3lFYCN\nwtum/ImLrk8QmPH0P9z5kySQV1wVzErp/gwPeD8CgYB+qDUpByK8Deu1nPTV0hpP\nu2ODEJhI1n7d1ss7MBthlwbIeZXamZpkRWrDY4ZZeLOeu/IK2tHHLId4prtPvyQD\nbQHjXOOXVEftw875b8+f4Ema6lMVHpUkAYNf5jpEnH6PHXJr0VCSCayaQEpwQVt4\ng2i+PmSWfpeVrE5tKncH0wKBgG1hVal+YMI67oKhnXIZSugs3orCD3JrR+0Zzvjt\n/5Ga95FCjg2VCxNxY0ktCymvr9JJCsS8H+vFD6iBD7eBGGPD4Ag4U3MzPS4IJ2O9\n1cqZsqKep1N3SRCNd60g0MeBUGJrYYDXvBN7suTgB4vYGAkKrVRrkGPPgqN5ws5M\ntXTpAoGAZA5b792Hc23oalZ/LZmH6AaUYLeAPyX1roEwM/f3qWjutOxN/QpVX5Bz\npnjCYXoqdQVyrCz5XBxuM6YaqIHcOqhhNvv/TD4UVth2TmBLJeD4M029CR2C+RpF\nGoDWH4GMRq1hgAbuNs1lF0W/vLPcXIs79T9HhW+ZYYvl96DXt64=\n-----END RSA PRIVATE KEY-----\n",
+  "client_secret": "5df46c56dec084fb1244f3e94cc9ec3835d551e3",
+  "permissions": {
+    "issues": "write",
+    "checks": "write",
+    "metadata": "read"
+  },
+  "events": [
+    "issues",
+    "issue_comment",
+    "check_suite",
+    "check_run"
+  ]
+}
