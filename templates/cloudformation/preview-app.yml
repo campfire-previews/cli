@@ -17,8 +17,6 @@ Resources:
       EnableDnsSupport: true
       EnableDnsHostnames: true
       Tags:
-        - Key: Team5Apps
-          Value: four_eyes
         - Key: Name
           Value: !Sub "${DefaultName}"
   RouteTable:
@@ -49,8 +47,6 @@ Resources:
       VpcId: !Ref Team5VPC
       CidrBlock: 10.0.1.0/24
       Tags:
-        - Key: Team5Apps
-          Value: four_eyes
         - Key: Name
           Value: !Sub "${DefaultName}"
   ClusterInternet:
@@ -65,8 +61,6 @@ Resources:
       VpcId: !Ref Team5VPC
       CidrBlock: 10.0.2.0/24
       Tags:
-        - Key: Team5Apps
-          Value: four_eyes
         - Key: Name
           Value: !Sub "${DefaultName}-alb-a"
   ALBInternetA:
@@ -81,8 +75,6 @@ Resources:
       VpcId: !Ref Team5VPC
       CidrBlock: 10.0.3.0/24
       Tags:
-        - Key: Team5Apps
-          Value: four_eyes
         - Key: Name
           Value: !Sub "${DefaultName}-alb-b"
   ALBInternetB:
@@ -93,9 +85,6 @@ Resources:
   ClusterSecurity:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      Tags:
-        - Key: Team5Apps
-          Value: four_eyes
       GroupName: !Sub "${DefaultName}-cluster"
       GroupDescription: Security group for the running ECS services
       VpcId: !Ref Team5VPC
@@ -106,12 +95,11 @@ Resources:
           ToPort: 8080
           SourceSecurityGroupId: !Ref ALBSecurity
       # By not defining SecurityGroupEgress, it allows all outbound traffic
+
+  # We don't need EFS right now, but will later
   EFSSecurity:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      Tags:
-        - Key: Team5Apps
-          Value: four_eyes
       GroupName: !Sub "${DefaultName}-efs"
       GroupDescription: Security Group for the Elastic File System
       VpcId: !Ref Team5VPC
@@ -130,9 +118,6 @@ Resources:
   ALBSecurity:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      Tags:
-        - Key: Team5Apps
-          Value: four_eyes
       GroupName: !Sub "${DefaultName}-alb"
       GroupDescription: Team5 Security Group for the Application Load Balancer
       VpcId: !Ref Team5VPC
@@ -155,6 +140,8 @@ Resources:
           ToPort: 8080
           CidrIp: 0.0.0.0/0
           # DestinationSecurityGroupId: !Ref ClusterSecurity
+
+  # We don't need EFS right now, but will later
   EFS:
     Type: AWS::EFS::FileSystem
     Properties:
@@ -162,8 +149,6 @@ Resources:
       FileSystemTags:
         - Key: Name
           Value: !Sub "${DefaultName}"
-        - Key: Team5Apps
-          Value: four_eyes
       PerformanceMode: generalPurpose
       Encrypted: true
   MountTarget:
@@ -176,16 +161,10 @@ Resources:
   Team5Repo:
     Type: AWS::ECR::Repository
     Properties:
-      Tags:
-        - Key: Team5Apps
-          Value: four_eyes
       RepositoryName: !Ref ECRName
   ALB:
     Type: AWS::ElasticLoadBalancingV2::LoadBalancer
     Properties:
-      Tags:
-        - Key: Team5Apps
-          Value: four_eyes
       Name: !Sub "${DefaultName}"
       SecurityGroups:
         - !Ref ALBSecurity
@@ -207,9 +186,6 @@ Resources:
   Team5TaskExecutionRole:
     Type: AWS::IAM::Role
     Properties:
-      Tags:
-        - Key: Team5Apps
-          Value: four_eyes
       RoleName: Team5TaskExecutionRole
       AssumeRolePolicyDocument:
         Version: "2012-10-17"
