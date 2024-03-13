@@ -2,7 +2,7 @@ import {Command} from '@oclif/core'
 import main from "../github-app-installer/installer.js";
 
 export default class Setup extends Command {
-  static description = 'Initialize AWS infrastructure for preview environment'
+  static description = 'Initialize AWS infrastructure for preview app'
 
   static examples = [
     '<%= config.bin %> <%= command.id %>',
