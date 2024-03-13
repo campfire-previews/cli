@@ -1,7 +1,7 @@
 import {Args, Command, Flags} from '@oclif/core'
 
 export default class Init extends Command {
-  static description = 'describe the command here'
+  static description = 'Initialize cluster for new preview environment'
 
   static examples = [
     '<%= config.bin %> <%= command.id %>',
