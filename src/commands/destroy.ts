@@ -1,7 +1,7 @@
 import {Args, Command, Flags} from '@oclif/core'
 
 export default class Destroy extends Command {
-  static description = 'describe the command here'
+  static description = 'Destroy AWS infrastructure for all preview environments'
 
   static examples = [
     '<%= config.bin %> <%= command.id %>',

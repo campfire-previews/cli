@@ -1,10 +1,8 @@
-/* eslint-disable */
-
 import {Command} from '@oclif/core'
 import main from "../github-app-installer/installer.js";
 
 export default class Setup extends Command {
-  static description = 'describe the command here'
+  static description = 'Initialize AWS infrastructure for preview environment'
 
   static examples = [
     '<%= config.bin %> <%= command.id %>',

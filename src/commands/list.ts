@@ -1,7 +1,7 @@
 import {Args, Command, Flags} from '@oclif/core'
 
 export default class List extends Command {
-  static description = 'describe the command here'
+  static description = 'List all active preview environments'
 
   static examples = [
     '<%= config.bin %> <%= command.id %>',
