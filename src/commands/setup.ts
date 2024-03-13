@@ -1,5 +1,12 @@
 import {Command} from '@oclif/core'
 import main from "../github-app-installer/installer.js";
+const Conf = require('conf');
+const api = require('../aws');
+const prompts = require('../prompts');
+const paths = require('../util/paths');
+const waitForState = require('../util/wait');
+const fs = require('fs');
+const log = require('../util/log.js');
 
 export default class Setup extends Command {
   static description = 'Initialize AWS infrastructure for preview app'
