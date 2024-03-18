@@ -1,15 +1,20 @@
-const {
+/* eslint-disable perfectionist/sort-imports */
+/* eslint-disable perfectionist/sort-named-imports */
+/* eslint-disable perfectionist/sort-objects */
+import {
   CloudFormationClient,
   CreateStackCommand,
   DescribeStacksCommand,
   DeleteStackCommand,
-} = require('@aws-sdk/client-cloudformation');
-const {
+} from '@aws-sdk/client-cloudformation';
+
+import {
   ECSClient,
   CreateClusterCommand,
   DeleteClusterCommand,
-} = require('@aws-sdk/client-ecs');
-const executeProcess = require('./executeProcess.js');
+} from '@aws-sdk/client-ecs';
+
+import executeProcess from './executeProcess.js';
 
 const clients = {
   cloudFormation: null,
@@ -72,7 +77,7 @@ const deleteCluster = async ({ cluster }) => executeProcess({
   }),
 });
 
-module.exports = {
+export default {
   clients,
   initializeCfClient,
   initializeEcsClient,

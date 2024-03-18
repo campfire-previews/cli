@@ -1,5 +1,8 @@
-const ora = require('ora')
-const chalk = require('chalk')
+/* eslint-disable n/no-extraneous-import */
+/* eslint-disable perfectionist/sort-objects */
+/* eslint-disable perfectionist/sort-imports */
+import ora from 'ora'
+import chalk from 'chalk'
 // const { LOGO, COLOR_MAP } = require('./logo')
 const primary = chalk.keyword('orange').bold
 const secondary = chalk.cyan
@@ -14,7 +17,7 @@ const success = chalk.green
 //   [' ']: char => char
 // }
 
-module.exports = {
+export default {
   spin(msg, opts) {
     const spinner = ora(msg)
     spinner.color = opts?.color || 'cyan'
