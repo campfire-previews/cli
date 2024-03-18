@@ -2,7 +2,7 @@
 /* eslint-disable perfectionist/sort-objects */
 /* eslint-disable perfectionist/sort-imports */
 import inquirer from 'inquirer';
-import log from '../util/log';
+import log from '../util/log.js';
 
 const confirmDestroy = async () => {
   log.warn('This will delete all PreviewApp code and infrastructure.');

@@ -2,7 +2,7 @@
 /* eslint-disable perfectionist/sort-objects */
 // eslint-disable-next-line unicorn/filename-case
 import inquirer from 'inquirer';
-import log from '../util/log';
+import log from '../util/log.js';
 
 const welcome = async () => {
   // log.printLogo()

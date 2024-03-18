@@ -4,7 +4,7 @@
 /* eslint-disable unicorn/prefer-regexp-test */
 /* eslint-disable perfectionist/sort-imports */
 import inquirer from 'inquirer';
-import log from '../util/log';
+import log from '../util/log.js';
 
 const PaketoBase = 'paketobuildpacks/builder:base'
 const PaketoFull = 'paketobuildpacks/builder:full'

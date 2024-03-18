@@ -1,4 +1,8 @@
-const log = require('../util/log.js');
+/* eslint-disable unicorn/filename-case */
+/* eslint-disable unicorn/no-process-exit */
+/* eslint-disable n/no-process-exit */
+/* eslint-disable perfectionist/sort-objects */
+import log from '../util/log.js';
 
 const executeProcess = async ({
   startMsg,
@@ -34,4 +38,4 @@ const executeProcess = async ({
   return awsSuccess;
 };
 
-module.exports = executeProcess;
+export default executeProcess;

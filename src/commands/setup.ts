@@ -1,3 +1,6 @@
+/* eslint-disable perfectionist/sort-union-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable unicorn/no-array-for-each */
 /* eslint-disable unicorn/prefer-node-protocol */
 /* eslint-disable n/no-process-exit */
 /* eslint-disable unicorn/no-process-exit */
@@ -5,7 +8,7 @@
 /* eslint-disable perfectionist/sort-imports */
 /* eslint-disable padding-line-between-statements */
 import {Command} from '@oclif/core'
-import promptGitHubInstall from "../github-app-installer/installer.js";
+// import promptGitHubInstall from "../github-app-installer/installer.js";
 
 // Library to create a configuration file for our package.
 import Conf from 'conf';
@@ -13,32 +16,33 @@ import Conf from 'conf';
 // CLI API used to make AWS service calls
 import api from '../aws/index.js';
 
-// 
 import prompts from '../prompts/index.js';
-import paths from '../util/paths/index.js';
-import waitForState from '../util/wait/index.js';
+
+import paths from '../util/paths.js';
+import waitForState from '../util/wait.js';
 import fs from 'fs';
 import log from '../util/log.js';
 
-const DEFAULT_NAME = 'Team5-apps';
-const config = new Conf();
+const DEFAULT_NAME = 'preview-app-apps';
+
+const config = new Conf({ projectName: DEFAULT_NAME });
 
 async function awsConfiguration() {
   if (config.size > 0) {
-    log.warn('There is already existing team5 infrastructure.');
-    log.error('Please destroy first using `team5 destroy`.');
+    log.warn('There is already existing previewApp infrastructure.');
+    log.error('Please destroy first using `previewApp destroy`.');
     process.exit(0);
   }
   const initialConfig = await prompts.welcome();
   config.set('AWS_REGION', initialConfig.awsRegion);
 
   log.text('')
-  process.stdout.write('Your team5 configuration file lives at ');
+  process.stdout.write('Your previewApp configuration file lives at ');
   log.info(config.path);
 
-  api.clients.cloudFormation = await api.initializeCfClient(config.get('AWS_REGION'));
+  api.clients.cloudFormation = await api.initializeCfClient(config.get('AWS_REGION')) as any;
 
-  log.header('\nGenerating your team5 infrastructure.');
+  log.header('\nGenerating your previewApp infrastructure.');
   log.text('In the mean time, feel free to take a stretch and grab some coffee ☕\n');
 
   await api.createStack({
@@ -52,7 +56,7 @@ async function awsConfiguration() {
     desiredState: 'CREATE_COMPLETE',
     describeFn: api.getStackOutputs,
     describeArgs: { StackName: DEFAULT_NAME },
-    resCallback(response) {
+    resCallback(response: { Stacks: { StackStatus: any; }[]; }) {
       return response.Stacks[0].StackStatus;
     },
   });
@@ -60,8 +64,12 @@ async function awsConfiguration() {
   const rawOutputs = await api.getStackOutputs({
     StackName: DEFAULT_NAME,
   });
-  let outputs = {};
-  rawOutputs.Stacks[0].Outputs.forEach(output => {
+
+	interface Outputs {
+		[key: string]: string;
+	}
+  const outputs: Outputs = {};
+  rawOutputs.Stacks[0].Outputs.forEach((output: { OutputKey: string | number; OutputValue: string; }) => {
     outputs[output.OutputKey] = output.OutputValue;
   });
 
@@ -85,7 +93,7 @@ async function awsConfiguration() {
 
   log.text('   ');
   log.header('Create a CNAME record at your custom domain');
-  process.stdout.write("Map '*.team5' to this DNS Name:  ");
+  process.stdout.write("Map '*.previewApp' to this DNS Name:  ");
   log.info(outputs.ALBDomain);
 
   log.header('\nCreate these two GitHub Secrets in your repositories:');
@@ -118,7 +126,7 @@ export default class Setup extends Command {
 
   public async run(): Promise<void> {
 
-    await promptGitHubInstall();
+    // await promptGitHubInstall();
 		await awsConfiguration();
   }
 }
